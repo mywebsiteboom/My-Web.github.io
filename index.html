@@ -22,26 +22,27 @@
   .mobile-notice {
     display: none;
     position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.95);
-    padding: 15px 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(15, 40, 80, 0.95);
+    padding: 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
     z-index: 9999;
-    max-width: 90%;
     animation: slideUp 0.5s ease forwards;
+    backdrop-filter: blur(10px);
+    border-top: 2px solid rgba(94, 163, 208, 0.5);
   }
   
   @keyframes slideUp {
     from { 
       opacity: 0;
-      transform: translateX(-50%) translateY(20px);
+      transform: translateY(100%);
     }
     to { 
       opacity: 1;
-      transform: translateX(-50%) translateY(0);
+      transform: translateY(0);
     }
   }
   
@@ -49,38 +50,42 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    max-width: 600px;
+    margin: 0 auto;
   }
   
   .mobile-notice h3 {
-    color: #001a3d;
-    font-size: 16px;
+    color: #5ea3d0;
+    font-size: 18px;
     font-weight: 600;
     margin: 0;
   }
   
   .mobile-notice p {
-    color: #444;
-    font-size: 13px;
-    line-height: 1.5;
+    color: #b8d4e8;
+    font-size: 14px;
+    line-height: 1.6;
     margin: 0;
   }
   
   .mobile-notice-btn {
-    background: #ff9500;
-    color: white;
+    background: #5ea3d0;
+    color: #001a3d;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
     align-self: flex-end;
+    box-shadow: 0 4px 10px rgba(94, 163, 208, 0.3);
   }
   
   .mobile-notice-btn:hover {
-    background: #ff7a00;
+    background: #87ceeb;
     transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(94, 163, 208, 0.5);
   }
   
   @media (max-width: 768px) {
@@ -784,11 +789,11 @@
         <i class="fab fa-facebook"></i>
         <p>Facebook</p>
       </a>
-      <a href="https://www.instagram.com/ma0_0v/" target="_blank" class="social-link">
+      <a href="https://www.instagram.ma0_0v/" target="_blank" class="social-link">
         <i class="fab fa-instagram"></i>
         <p>Instagram</p>
       </a>
-<a href="https://www.youtube.com/@cristinabinaguiohan5605" target="_blank" class="social-link">
+      <a href="https://www.youtube.com/@cristinabinaguiohan5605" target="_blank" class="social-link">
         <i class="fab fa-youtube"></i>
         <p>YouTube</p>
       </a>
@@ -827,11 +832,11 @@
     @keyframes slideDown {
       from { 
         opacity: 1;
-        transform: translateX(-50%) translateY(0);
+        transform: translateY(0);
       }
       to { 
         opacity: 0;
-        transform: translateX(-50%) translateY(20px);
+        transform: translateY(100%);
       }
     }
   `;
