@@ -600,38 +600,73 @@
       overflow-x: hidden;
     }
     
+    /* 📱 Make main box smaller and more compact */
     .main-box {
-      margin: 10px;
+      width: 85%;
+      max-width: 400px;
+      min-height: 350px;
+      padding-bottom: 15px;
     }
     
+    h1 {
+      margin-top: 25px;
+      font-size: clamp(35px, 9vw, 50px);
+    }
+    
+    .icons {
+      margin-top: 25px;
+      gap: 25px;
+    }
+    
+    /* 📱 Make popups centered with margin from top */
     .popup {
-      margin: 10px;
-      width: calc(100% - 20px);
-      max-width: calc(100% - 20px);
+      width: 90%;
+      max-width: 90%;
+      max-height: 80vh;
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
     }
     
+    .popup-content {
+      padding: 20px;
+      max-height: calc(80vh - 45px);
+    }
+    
+    /* 📱 Center profile image and text in About popup */
     .popup-content img {
       float: none;
       display: block;
       margin: 0 auto 15px;
     }
     
+    .popup-content h2,
+    .popup-content .subtitle {
+      text-align: center;
+    }
+    
+    /* 📱 Make social links horizontal and compact in Contact popup */
+    .social-links-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+    
+    .social-link {
+      padding: 20px 10px;
+    }
+    
+    .social-link i {
+      font-size: clamp(30px, 6vw, 40px);
+      margin-bottom: 8px;
+    }
+    
+    .social-link p {
+      font-size: clamp(12px, 2.5vw, 14px);
+    }
+    
     .intro-text, .section-box {
       padding: 12px;
-    }
-    
-    .social-links-grid {
-      grid-template-columns: 1fr;
-      gap: 15px;
-    }
-    
-    h1 {
-      margin-top: 30px;
-    }
-    
-    .icons {
-      margin-top: 30px;
-      gap: 30px;
     }
     
     .work-gallery {
@@ -647,6 +682,12 @@
     .popup-header {
       cursor: default;
       touch-action: auto;
+    }
+    
+    /* 📱 Even smaller main box for very small phones */
+    .main-box {
+      width: 90%;
+      max-width: 350px;
     }
   }
 </style>
@@ -789,7 +830,7 @@
         <i class="fab fa-facebook"></i>
         <p>Facebook</p>
       </a>
-      <a href="https://www.instagram.ma0_0v/" target="_blank" class="social-link">
+      <a href="https://www.instagram.com/ma0_0v/" target="_blank" class="social-link">
         <i class="fab fa-instagram"></i>
         <p>Instagram</p>
       </a>
@@ -846,11 +887,11 @@
     const popup = document.getElementById(id);
     popup.classList.add('active');
     
-    // On mobile, make it fullscreen. On desktop, center it.
+    // On mobile, center it with !important to override drag positioning
     if (window.innerWidth <= 768) {
-      popup.style.top = '0';
-      popup.style.left = '0';
-      popup.style.transform = 'none';
+      popup.style.top = '50%';
+      popup.style.left = '50%';
+      popup.style.transform = 'translate(-50%, -50%)';
     } else {
       popup.style.top = '50%';
       popup.style.left = '50%';
